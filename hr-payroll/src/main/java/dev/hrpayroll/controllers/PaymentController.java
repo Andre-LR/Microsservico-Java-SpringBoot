@@ -18,6 +18,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     // GET /payments/{worker_id}/days/{days}
+    // Pagamento com base nos dias trabalhados
     @GetMapping(value = "/{workerId}/days/{days}")
     public ResponseEntity<Payment> getPayment(@PathVariable Long workerId, @PathVariable Integer days) {
         Payment payment = paymentService.getPayment(workerId, days);
